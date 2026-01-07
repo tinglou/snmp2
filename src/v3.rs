@@ -449,8 +449,8 @@ impl Security {
         openssl::rand::rand_bytes(&mut salt[4..])?;
         #[cfg(feature = "v3_rust")]
         {
-             use rand::Rng;
-             rand::rng().fill(&mut salt[4..]);
+            use rand::Rng;
+            rand::rng().fill(&mut salt[4..]);
         }
 
         if data.is_empty() {
@@ -521,8 +521,8 @@ impl Security {
         openssl::rand::rand_bytes(&mut iv[salt_pos..])?;
         #[cfg(feature = "v3_rust")]
         {
-             use rand::Rng;
-             rand::rng().fill(&mut iv[salt_pos..]);
+            use rand::Rng;
+            rand::rng().fill(&mut iv[salt_pos..]);
         }
 
         if self.authoritative_state.priv_key.len() < key_len {
